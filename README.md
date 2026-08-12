@@ -16,13 +16,18 @@ cd lc-la-example-blazor-server
 
 ## Build and Run
 
-1. Configure your application with a free LightningChart JS trial key or existing commercial key. This example reads `LCJS_LICENSE_KEY`; deployment licenses can also use `LCJS_APP_TITLE` and `LCJS_COMPANY`.
+1. Run the example:
 
-2. Run the example:
    ```
-   dotnet run
+   # PowerShell:
+   $env:LCJS_LICENSE_KEY="your-license-key"; dotnet run
    ```
 
-3. Open https://localhost:5001 (or the URL shown in terminal) and navigate to "LCLA Chart".
+   ```
+   # Git Bash:
+   LCJS_LICENSE_KEY="your-license-key" dotnet run
+   ```
 
-4. Click "Start Streaming" to see real-time data.
+2. Open https://localhost:5001 (or the URL shown in terminal) and navigate to "LCLA Chart".
+
+3. Click "Start Streaming" to see real-time data.

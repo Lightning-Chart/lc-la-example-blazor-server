@@ -35,7 +35,7 @@
 
 @code {
     private BlazorTransport? _transport;
-    private LclaClient? _client;
+    private LclaContext? _context;
     private LclaChart? _chart1;
     private LclaChart? _chart2;
     private bool _ready;
@@ -51,10 +51,10 @@
         if (!firstRender) return;
 
         _transport = new BlazorTransport(JSRuntime);
-        _client = new LclaClient(_transport, License);
+        _context = new LclaContext(_transport, License);
 
         // Chart 1: sensor monitor with DateTime X axis and stacked Y axes
-        _chart1 = await _client.CreateChartAsync(new XYChartConfig
+        _chart1 = await _context.CreateChartAsync(new XYChartConfig
         {
             ContainerId = "lcla-chart-1",
             Title = "Sensor Monitor — DateTime Axis, Stacked",
@@ -85,7 +85,7 @@
         _chart1.SetTickStrategy(new SetTickStrategyOptions { Axis = AxisTarget.X, Strategy = TickStrategy.DateTime });
 
         // Chart 2: signal analysis with numeric axes
-        _chart2 = await _client.CreateChartAsync(new XYChartConfig
+        _chart2 = await _context.CreateChartAsync(new XYChartConfig
         {
             ContainerId = "lcla-chart-2",
             Title = "Signal Analysis",
@@ -311,6 +311,6 @@
         await StopStreamingInternal();
         if (_chart1 != null) await _chart1.DisposeAsync();
         if (_chart2 != null) await _chart2.DisposeAsync();
-        if (_client != null) await _client.DisposeAsync();
+        if (_context != null) await _context.DisposeAsync();
     }
 }
