@@ -11,7 +11,7 @@ cd lc-la-example-blazor-server
 
 ## Prerequisites
 
-- .NET 8 SDK or later
+- .NET 10 SDK
 - LightningChart JS license key ([get one here](https://lightningchart.com/js-charts/))
 
 ## Build and Run
