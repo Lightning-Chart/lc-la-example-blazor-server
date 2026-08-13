@@ -2,6 +2,8 @@
 
 Real-time XY chart with streaming sine/cosine data.
 
+Learn more: [LightningChart documentation](https://lightningchart.com/lc-la/docs/)
+
 Clone this standalone example with:
 
 ```bash
